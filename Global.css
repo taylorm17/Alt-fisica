@@ -16,7 +16,7 @@
         scrollbar-width: none;
     } 
     body {
-        background: linear-gradient(180deg, #083e77, #0a3f6b, #081d36);
+        background: linear-gradient(180deg, #561F4F, #3d0d37, #290424);
         background-size: contain; 
         background-position: center;
         margin: 0;
@@ -64,7 +64,7 @@
         font-family: "Lora", serif;
     }
     header a:hover {
-        color: #3082a1;
+        color: #CD74C1;
     }
 /* define a transparência */
     header.transparent {
@@ -147,7 +147,7 @@
 =================================*/ 
     .titulos, .titulos-espaçado {
         color: black;
-        text-shadow: 1.5px 1.5px 6px rgba(0, 0, 150, 0.7);
+        text-shadow: 1.5px 1.5px 6px #A13A93;
         font-family: "Orbitron", sans-serif;
         letter-spacing: 1px;
     }
@@ -205,7 +205,7 @@
         align-items: center;
         color: white;
         text-align: center;
-        background-color: #081d36;
+        background-color: #561F4F;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 1400px auto;
@@ -232,7 +232,7 @@
 
     }
     .banner-2 img {
-        background-color: #3082a1;
+        background-color: #CD74C1;
         background-size: contain;
         background-position: center;
         background-repeat: inherit;
@@ -258,7 +258,7 @@
             padding:15px 15px;
             border:none;
             border-radius:10px;
-            background:#3b7f98;
+            background:#CD74C1;
             color:white;
             font-size:18px;
             font-weight:500;
@@ -268,7 +268,7 @@
             margin-bottom:20px; 
         }
         .accordion-btn:hover{
-            background:#2f6c82;
+            background:#A13A93;
             transform:scale(1.01);
         }
         .accordion-content{
@@ -292,7 +292,7 @@
     .botao{
         text-align: center;
         display: inline-block;
-        background-color: #3082a1;
+        background-color: #CD74C1;
         color: white;
         padding: 10px 15px;
         border-radius: 5px;
@@ -300,7 +300,7 @@
         transition: 0.3s;
     }
     .botao:hover, .link:hover {
-        background-color: #083e77;
+        background-color: #A13A93;
         transform: scale(1.03);
     }
     .botoes {
@@ -312,7 +312,7 @@
         }
     .link {
         display: inline-block;
-        background-color: #3082a1;
+        background-color: #CD74C1;
         color: white;
         padding: 10px 15px;
         border-radius: 5px;
