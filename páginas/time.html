@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWQPQXCW78"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DWQPQXCW78');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça o time da Masterclass Internacional de Física do CERN no IFSC São Lourenço do Oeste. Professores e estudantes envolvidos no projeto educacional.">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../imagens/icone.ico">
+    <link rel="stylesheet" href="/Global.css">
+    <title>Time Masterclass</title>
+
+    <style>   
+        .faixa-branca{
+            padding-top: 10px;
+        }
+        .resumo-container {
+            display: flex; 
+            align-items: center;
+            gap: 20px; /* Espaço entre as colunas */
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        /* Coluna da imagem */
+        .coluna-esquerda img {  
+            width: 250px; 
+            height: 250px;
+            border-radius: 10px;
+            background-size: contain;
+            background-position: center;
+        }
+        @media (max-width: 768px) {
+            .faixa-branca {
+                max-width: 85%;
+            }
+            .resumo-container {
+                flex-direction: column; 
+                text-align: center;
+            }
+            .coluna-esquerda img {
+                width: 200px; 
+                height: 200px;
+            }
+        }
+        @media (min-width:768px) {
+            .faixa-branca {
+                max-width: 60%;
+            }
+        }
+            
+    </style>
+</head>
+<body data-page="time"> 
+    <canvas id="canvas-bg"></canvas>
+
+    <header id="header" class="transparent">
+        <div class="menu-btn" id="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav id="menu">
+            <a href="../index.html">Início</a>
+            <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">Instagram</a>
+            <a href="../páginas/time.html">Time</a>
+            <a href="../páginas/materiais.html">Materiais</a>
+            <a href="https://home.cern/" target="_blank">CERN & Técnica</a>
+            <a href="../páginas/resultados.html">Resultados</a>
+            <a href="../páginas/inscrições.html">Inscrição</a>
+        </nav>
+    </header>
+
+    <div id="overlay" class="overlay"></div>
+
+    <section id="banner"></section>    
+
+    <main>
+        <!--pessoa 1 -->
+        <section class="faixa-branca">
+            <div class="resumo-container">
+                <div class="coluna-esquerda">
+                    <img src="../imagens/perfil_stella.png" alt="Foto de perfil da Stella">
+                </div>
+
+                <div class="coluna-direita">
+                <h1>Stella</h1>
+                    <p>
+                        Sou física e professora do IFSC, natural de Brasília-DF. Doutora em Cosmologia pelo CBPF, tenho paixão pela ciência, pela leitura e pela divulgação científica. Oriento o projeto Masterclass do CERN no Campus São Lourenço do Oeste, que aproxima estudantes do universo das partículas e da pesquisa internacional. Em 2024, participei da Escola do CERN para Professores em Língua Portuguesa, vivência que reforçou ainda mais minha ligação com a colaboração científica global. E no teste do CERN, a minha partícula é o elétron, lembrando que ciência também pode ser divertida.
+                    </p>
+                </div>
+            </div>
+        </section>
+                <!--pessoa 1 -->
+        <section class="faixa-branca">
+            <div class="resumo-container">
+                <div class="coluna-esquerda">
+                    <img src="../imagens/perfil_fabio.png" alt="Foto de perfil do Fábio">
+                </div>
+
+                <div class="coluna-direita">
+                <h1>Fábio</h1>
+                    <p>
+                        Sou professor de Química do IFSC e doutor em Química
+                        Orgânica pela UNICAMP. Tenho paixão pela ciência, pela divulgação científica e,
+                        principalmente, pelo ensino de Química. Faço parte do projeto MasterClass no
+                        Câmpus São Lourenço do Oeste, que aproxima os estudantes da física de
+                        partículas e do trabalho desenvolvido no CERN. No teste de personalidade do
+                        CERN, minha partícula é o Quark Charme (Charm Quark).
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!--pessoa 2 -->
+        <section class="faixa-branca">
+            <div class="resumo-container">
+                <div class="coluna-esquerda">
+                    <img src="../imagens/perfil_julia.png" alt="Foto de perfil da DIVAAAAAAA Julia">
+                </div>
+                <div class="coluna-direita">
+                <h1>Julia</h1>
+                    <p>
+                        Me chamo Julia, tenho 16 anos e sou Estudante do Ensino Médio Técnico em Marketing no IFSC, apaixonada por ciência e livros! Segundo o teste do CERN, sou um Strange Quark.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- pessoa 3 -->
+        <section class="faixa-branca">
+            <div class="resumo-container">
+                <div class="coluna-esquerda">
+                    <img src="../imagens/perfil_alice.png" alt="Foto de perfil da Alice">
+                </div>
+                <div class="coluna-direita">
+                <h1>Alice</h1>
+                    <p>
+                        Sou estudante do ensino médio técnico em marketing no campus são Lourenço do oeste e atualmente estou atuando como bolsista no projeto Masterclass! <br> Meu interesse em física cresceu após entrar no ensino médio e ver como as oportunidades se abriram para mim!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- pessoa 4 -->
+        <section class="faixa-branca">
+            <div class="resumo-container">
+                <div class="coluna-esquerda">
+                    <img src="../imagens/perfil_taylor.png" alt="Foto de perfil do Taylor">
+                </div>
+                <div class="coluna-direita">
+                <h1>Taylor</h1>
+                    <p>
+                        Me chamo Taylor e sou mais um estudante do ensino médio técnico em marketing, e atualmente sigo atuando como bolsista do projeto masterclass. Tenho um grande interresse por fisica e tecnologia. <br> seguindo o teste do Cern eu sou um Anti-Neutrino do Eletron!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- pessoa 5 -->
+        <section class="faixa-branca">
+            <div class="resumo-container">
+                <div class="coluna-esquerda">
+                    <img src="../imagens/perfil_felipe.jpg" alt="Foto de perfil do Felipe">
+                </div>
+                <div class="coluna-direita">
+                <h1>Felipe</h1>
+                    <p>
+                        Me chamo Felipe e sou estudante do Ensino Médio Técnico em Marketing. Atualmente, atuo como voluntário no projeto masterclass. Tenho grande interesse por Física e História, áreas que despertam minha curiosidade e me motivam a compreender melhor o mundo e suas transformações.<br> E sobre o teste do Cern eu sou um Neutrino de Múon
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- pessoa 6 -->
+        <section class="faixa-branca">
+            <div class="resumo-container">
+                <div class="coluna-esquerda">
+                    <img src="../imagens/perfil_milena.png" alt="Foto de perfil da Milena">
+                </div>
+                <div class="coluna-direita">
+                <h1>Milena</h1>
+                    <p>
+                        Meu nome é Milena, sou estudante do Ensino Médio Técnico em Marketing no IFSC. Sou movida pela curiosidade e divido meu tempo entre a paixão pelo conhecimento e o amor visceral pela dança. Segundo o teste do CERN, sou um W Boson o que resume muito bem a minha essência positiva, curiosa e fora do comum.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <div class="coluna-esquerda-footer">
+                <a href="https://www.ifsc.edu.br/en/web/campus-sao-lourenco-do-oeste" target="_blank">
+                    <img src="../imagens/logo_ifsc.png" alt="logo do instituto federal de santa catarina">
+                </a>
+                <p>Acesse o site do ifsc</p>
+                    
+            </div>
+            <div class="coluna-direita-footer">
+                <p>
+                    <a href="https://home.cern/" target="_blank">Sobre o CERN</a>
+                    <span>|</span> 
+                    <a href="https://sprace.org.br/" target="_blank">Sprace</a>
+                    <span>|</span>
+                    <a href="https://renafae.cbpf.br/" target="_blank">Renafae</a>
+                    <span>|</span>
+                    <a href="https://www.lip.pt/" target="_blank">Lip.pt</a>
+                </p>
+                <div class="texto-footer">
+                    <p>Contatos: 
+                        <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">
+                            <img src="../imagens/logo_insta.png" alt="Logo do Instagram" width="50px" height="50px" style="vertical-align: middle; width: 50px;">
+                        </a> 
+                        <a href="mailto:projetomasterclass.slo@gmail.com" target="_blank">
+                            <img src="../imagens/icone_email.png" alt="e-mail" style="vertical-align: middle; width: 50px;">
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>   
+    </footer>
+
+    <script type="module" src="../base.js"></script>
+</body>
+</html>

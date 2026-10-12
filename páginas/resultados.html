@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head> 
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWQPQXCW78"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DWQPQXCW78');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veja os resultados das edições anteriores da Masterclass do CERN no IFSC São Lourenço do Oeste: cronogramas, galeria e análises da participação local.">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../imagens/icone.ico">
+    <link rel="stylesheet" href="/Global.css">
+    <title>Resultados</title>
+
+    <style> 
+        .modal{
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.8);
+            justify-content:center;
+            align-items:center;
+            z-index: 14;
+        }
+        .modal-conteudo{
+            position:relative;
+        }
+        .modal img{
+            max-width:80vw;
+            max-height:80vh;
+            border-radius:10px;
+        }
+        .fechar{
+            position:absolute;
+            top:20px;
+            right:40px;
+            color:white;
+            font-size:40px;
+            cursor:pointer;
+        }
+        #prev, #next{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            background:white;
+            border:none;
+            font-size:20px;
+            padding:10px;
+            cursor:pointer;
+        }
+        #prev{ left:-50px; }
+        #next{ right:-50px; }
+        .galeria-item{
+            cursor:pointer;
+            color:#3082a1;
+            font-weight:bold;
+        }
+        .galeria-item:hover{
+            text-decoration:underline;
+        }   
+        .preview-box{
+            position:absolute;
+            display:none;
+            background:white;
+            padding:6px;
+            border-radius:10px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+            z-index: 15;
+        }
+        .preview-box img{
+            width:80px;
+            margin:3px;
+            border-radius:5px;
+        }
+        .titulos {
+            text-shadow: 1.5px 1.5px 6px rgba(0, 0, 0, 0.7);
+        }
+        
+        @media (max-width: 768px) {
+            .accordion{
+                margin-left: 30px;
+            }
+            .accordion-content{
+                margin-left: -25px;
+            }
+            .botao-svg {
+                margin-left: -20px;
+            }
+            .espaçamento{
+                padding: 0px 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body data-page="resultados">
+    <canvas id="canvas-bg"></canvas>
+    <header id="header" class="transparent">
+        <div class="menu-btn" id="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav id="menu">
+            <a href="../index.html">Início</a>
+            <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">Instagram</a>
+            <a href="../páginas/time.html">Time</a>
+            <a href="../páginas/materiais.html">Materiais</a>
+            <a href="https://home.cern/" target="_blank">CERN & Técnica</a>
+            <a href="../páginas/resultados.html">Resultados</a>
+            <a href="../páginas/inscrições.html">Inscrição</a>
+        </nav>
+    </header>
+    <div id="overlay" class="overlay"></div>
+    <section id="banner"></section>  
+
+    <main>
+        <section class="faixa-branca">
+            <div class="titulo-nucleo">
+                <h1 class="titulos">Contexto das edições</h1>
+            </div>
+            <p>Aqui estão reunidos registros das edições já realizadas da Masterclass no campus, incluindo informações gerais do evento, cronogramas, registros fotográficos e resultados das atividades desenvolvidas pelos participantes.</p>
+        </section>
+        <div class="accordion">
+
+            <div class="item">
+                <button class="accordion-btn">Edição de 2025 - Saiba mais →</button>
+                <div class="accordion-content">
+                    
+                    <h2 style="padding: 20px 0px 0px;">- Informações sobre a edição da Masterclass de 2025 -</h2>
+                        <h3>informações Gerais:</h3>
+                            <ul class="espaçamento"> 
+                                <li><strong>Data:</strong> 28 a 29 de Outubro de 2025</li>
+                                <li><strong>Participantes:</strong> 40 estudantes </li>
+                                <li><strong>Palestras realizadas:</strong> 7 + Atividades</li>
+                                <li><strong>Carga horária total:</strong> 16 horas  </li>
+                                <li><strong>Local:</strong> Instituto Federal - Campus São Lourenço do Oeste</li>
+                            </ul>  
+                            <br>
+
+                        <h3>Cronograma:</h3>
+                            <ul class="espaçamento">
+                                <p>O cronograma <strong>completo</strong> da <strong>edição de 2025</strong>, contendo horários das palestras, atividades práticas e intervalos, pode ser consultado na página oficial do evento.</p>
+                                <div class="links">
+                                    <div class="botao-svg">
+                                        <a href="https://indico.global/event/15965/timetable/#20251028" class="link" target="_blank"> Ver Cronograma Completo →</a>
+                                    </div>
+                                </div>
+                            </ul>
+                    
+                            
+                            <h3>Galeria</h3>
+
+                                <div class="espaçamento">
+                                    <ul>
+                                    <li class="galeria-item" data-galeria="organizacao"><strong>Organização</strong></li>   
+                                    </br>                                     
+                                    <li class="galeria-item" data-galeria="participantes"><strong>Participantes</strong></li>
+                                    </ul>
+                                </div>
+                            <h3>Certificados</h3>
+                                <ul class="espaçamento"><p>Os certificados de participação foram emitidos digitalmente e enviados aos participantes por e-mail após a realização do evento.</p></ul>
+                            <h3>Resultados da análise de partículas</h3>
+                                <ul class="espaçamento">Durante a atividade prática da masterclass, os participantes analisaram dados reais de detectores de partículas, observando diretamente diferentes tipos de trajetórias e interações registradas nos eventos. Entre os exemplos estudados estavam sinais característicos de múons, elétrons e outras partículas produzidas em colisões de alta energia. A análise desses eventos permitiu identificar padrões nas trilhas deixadas no detector, discutir como as partículas são reconhecidas pelos físicos e compreender, de forma concreta, como os dados experimentais são utilizados para investigar fenômenos da física de partículas.</ul>
+                            <!--<h4>Feedback dos Participantes</h4>
+                                <ul>Alguma coisa</ul>-->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <div class="coluna-esquerda-footer">
+                <a href="https://www.ifsc.edu.br/en/web/campus-sao-lourenco-do-oeste" target="_blank">
+                    <img src="../imagens/logo_ifsc.png" alt="logo do instituto federal de santa catarina">
+                </a>
+                <p>Acesse o site do ifsc</p>
+                    
+            </div>
+            <div class="coluna-direita-footer">
+                <p>
+                    <a href="https://home.cern/" target="_blank">Sobre o CERN</a>
+                    <span>|</span> 
+                    <a href="https://sprace.org.br/" target="_blank">Sprace</a>
+                    <span>|</span>
+                    <a href="https://renafae.cbpf.br/" target="_blank">Renafae</a>
+                    <span>|</span>
+                    <a href="https://www.lip.pt/" target="_blank">Lip.pt</a>
+                </p>
+                <div class="texto-footer">
+                    <p>Contatos: 
+                        <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">
+                            <img src="../imagens/logo_insta.png" alt="Logo do Instagram" width="50px" height="50px" style="vertical-align: middle; width: 50px;">
+                        </a> 
+                        <a href="mailto:projetomasterclass.slo@gmail.com" target="_blank">
+                            <img src="../imagens/icone_email.png" alt="e-mail" style="vertical-align: middle; width: 50px;">
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>   
+    </footer>
+    <div id="galeria-modal" class="modal">
+    <span class="fechar">&times;</span>
+    <div class="modal-conteudo">
+    <button id="prev">◀</button>
+    <img id="modal-img">
+    <button id="next">▶</button>
+    </div>
+    </div>
+        <script type="module" src="../base.js"></script>
+</body>
+</html>
+
+

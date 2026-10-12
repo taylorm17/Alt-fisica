@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>   
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWQPQXCW78"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DWQPQXCW78');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore os materiais usados na Masterclass Internacional de Física do CERN. Recursos e referências para estudos em física de partículas e se prepare para o evento.">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../imagens/icone.ico">
+    <link rel="stylesheet" href="/Global.css">
+    <title>Materiais</title>
+    <style>
+        @media (min-width: 768px){
+            .faixa-branca{
+                max-width: 63%;     
+            }
+        }
+        .carrossel-seta {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px auto;
+            padding-left: 40px;
+            box-sizing: border-box;
+            overflow: visible;
+        }
+        .carrossel-container {
+            position: relative;
+            width: 100%;
+            max-width: 960px;
+            margin: 25px auto;
+            overflow: hidden;
+        }
+        .carrossel {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+        }
+        .coluna {
+            flex: 0 0 290px;
+            height: 250px;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 14px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: 
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border 0.35s ease;
+        }
+        .coluna:hover {
+            transform: scale(0.95);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .coluna::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.75) 0%,
+                rgba(0,0,0,0.35) 40%,
+                rgba(0,0,0,0) 70%
+            );
+            z-index: 1;
+        }
+        .coluna:hover::before {
+            background: rgba(0,0,0,0.4);
+        }
+        .coluna::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            color: white;
+            font-weight: bold;
+            z-index: 2;
+        }
+        .seta {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(6px);
+            border-radius: 50%;
+            color: black;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 5;
+            border: 1px solid rgba(0,0,0,0);        
+            transition: all 0.25s ease;
+        }
+        .seta:hover {
+            background: #3082a1;
+            transform: translateY(-50%) scale(1.1);
+            border: 2px solid #083e77;
+        }
+        .seta.esquerda {
+            left: 30px;
+        }
+        .seta.direita {
+            right: 20px;
+        }
+        .Faixa-inferior{
+            background-color: rgb(14, 21, 51);
+            color: #fff;
+            text-align: center;
+            font-size: 18pt;
+            font-family: "Space Grotesk", sans-serif;
+            padding: 10x 0px;
+            margin: 10px 0px;
+        }
+        @media (max-width: 768px) {
+            .titulos-espaçado {
+                padding: 10px 15px 0;
+            }
+            .carrossel-container {
+                width: 100%;
+                padding: 0 10px;
+                transform: translateX(-20px);
+            }
+            .carrossel {
+                gap: 20px;
+            }
+            .coluna {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .seta.esquerda {
+                left: -15px;
+            }
+            .seta.direita {
+                right: -15px;   
+            }
+        }
+    </style>  
+</head>
+
+<body data-page="materiais">
+    <canvas id="canvas-bg"></canvas>
+    <header id="header" class="transparent">
+        <div class="menu-btn" id="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav id="menu">
+            <a href="../index.html">Início</a>
+            <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">Instagram</a>
+            <a href="../páginas/time.html">Time</a>
+            <a href="../páginas/materiais.html">Materiais</a>
+            <a href="https://home.cern/" target="_blank">CERN & Técnica</a>
+            <a href="../páginas/resultados.html">Resultados</a>
+            <a href="../páginas/inscrições.html">Inscrição</a>
+        </nav>
+    </header>
+
+    <div id="overlay" class="overlay"></div>
+    <section id="banner"></section>  
+
+    <main>
+        
+        <h1 style="text-align: center; color: white; -webkit-text-stroke-width: 100%; 
+    -webkit-text-stroke-color: black; ">Nossa Trilha de Conhecimento</h1>
+        <h3 style="text-align: center; color: white; -webkit-text-stroke-width: 100%; 
+    -webkit-text-stroke-color: black;">As referências que sustentaram este projeto e caminhos para quem quiser explorar mais.</h3>
+        <section class="faixa-branca">
+            <div class="titulo-nucleo">
+                <img src="../imagens/nucleo.svg" alt="icone do nucleo de um átomo">
+                <h1 class="titulos">Nucleo</h1>
+                <img src="../imagens/nucleo.svg" alt="icone do nucleo de um átomo">
+            </div>
+            <p class="texto">Nesta parte se encontram as principais referencias utilizadas para nosso projeto</p>
+            <div class="links">
+                <a href="https://www.youtube.com/watch?v=Kn4pAoucyMg" class="link" target="_blank">O Modelo Padrão Explicado: A Melhor Teoria da Física </a>
+                <a href="https://home.cern/science/physics/standard-model" class="link" target="_blank">Standard Model </a>
+                <a href="https://super.abril.com.br/ciencia/entenda-de-uma-vez-o-que-e-o-modelo-padrao/" class="link" target="_blank">Entenda de uma vez: o que é o Modelo Padrão?</a>
+                <a href="https://home.cern/science/accelerators/large-hadron-collider" class="link" target="_blank">O Grande Colisor de Hádrons</a>
+                <a href="https://www.youtube.com/watch?v=aNKSf3HMUNc" class="link" target="_blank">Física ao Vivo - O que é o CERN e qual a pesquisa desenvolvida neste laboratório?</a>
+            </div>
+        </section>
+        <section class="faixa-branca">
+            <div class="titulo-nucleo">
+                <img src="../imagens/orbita.svg" alt="icone da órbita de dois eletrons ao redor de um núcleo">
+                <h1 class="titulos">Orbita</h1>
+                <img src="../imagens/orbita.svg" alt="icone da órbita de dois eletrons ao redor de um núcleo">
+            </div> 
+            <p class="texto">Aqui estão algumas informações adicionais que nos permitem aprofundar ainda mais</p>
+            <div class="links">
+                <a href="https://celeste.if.usp.br/docs/Fundamentos/sm/" class="link" target="_blank">O modelo padrão da Física de Partículas</a>
+                <a href="https://www.youtube.com/watch?v=tBYNYchOXmY" class="link" target="_blank">Tijolinhos do Universo: Física de Partículas | Alô, Ciência?</a>
+                <a href="https://outreach.ictp-saifr.org/particulas/" class="link" target="_blank">Pequenas partículas para grandes questões</a>
+            </div>
+        </section>
+        <section class="faixa-branca">
+            <div class="titulo-nucleo">
+                <img src="../imagens/adicionais.svg" alt="icone de partículas brilhando">
+                <h1 class="titulos-espaçado">Partículas adicionais</h1>
+                <img src="../imagens/adicionais.svg" alt="icone de partículas brilando">
+            </div>
+            <p class="texto" style="padding: 10px;">Ficou curioso sobre algo ou com vontade de "quero mais"? Aqui estão algumas curiosidades para você</p>
+            <div class="carrossel-seta">
+                <button class="seta esquerda">&#10094;</button>
+                <div class="carrossel-container">
+                    <div class="carrossel">
+                        <a href="https://ippog.org/ippog_witness_stories" class="coluna" target="_blank" style="background-image: url('../imagens/fisica-sociedade.png');">
+                            <p class="texto-colunas">Como a física transforma  sociedade</p>
+                        </a>
+                        <a href="https://www1.fisica.org.br/ippog/?q=materiais/reportagens" class="coluna" target="_blank" style="background-image: url('../imagens/ippog.png'); ">
+                            <p class="texto-colunas">Reportagens IPPOG</p>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=OW1dL6EYKDA" class="coluna" target="_blank" style="background-image: url('../imagens/viagem_cern.png'); ">
+                           <p class="texto-colunas"> Documentário "Viagem ao CERN"</p>    
+                        </a>
+                        <a href="https://www.nationalgeographicbrasil.com/ciencia/2024/04/quem-foi-peter-higgs-o-cientista-que-descobriu-a-particula-de-deus" class="coluna" target="_blank" style="background-image: url('../imagens/particula_deus.png'); ">
+                           <p class="texto-colunas">A particula de Deus</p>
+                        </a>
+                    </div>
+                </div>
+                <button class="seta direita">&#10095;</button>
+            </div>
+        </section>
+    </main>
+        <div class="Faixa-inferior">
+            <p><strong><em> A jornada do conhecimento nunca termina. Compartilhe conosco novos materiais e vamos crescer juntos</strong></em></p>
+        </div>
+    <footer>
+        <div class="container-footer">
+            <div class="coluna-esquerda-footer">
+                <a href="https://www.ifsc.edu.br/en/web/campus-sao-lourenco-do-oeste" target="_blank">
+                    <img src="../imagens/logo_ifsc.png" alt="logo do instituto federal de santa catarina">
+                </a>
+                <p>Acesse o site do ifsc</p>
+                    
+            </div>
+            <div class="coluna-direita-footer">
+                <p>
+                    <a href="https://home.cern/" target="_blank">Sobre o CERN</a>
+                    <span>|</span> 
+                    <a href="https://sprace.org.br/" target="_blank">Sprace</a>
+                    <span>|</span>
+                    <a href="https://renafae.cbpf.br/" target="_blank">Renafae</a>
+                    <span>|</span>
+                    <a href="https://www.lip.pt/" target="_blank">Lip.pt</a>
+                </p>
+                <div class="texto-footer">
+                    <p>Contatos: 
+                        <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">
+                            <img src="../imagens/logo_insta.png" alt="Logo do Instagram" width="50px" height="50px" style="vertical-align: middle; width: 50px;">
+                        </a> 
+                        <a href="mailto:projetomasterclass.slo@gmail.com" target="_blank">
+                            <img src="../imagens/icone_email.png" alt="e-mail" style="vertical-align: middle; width: 50px;">
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>   
+    </footer>
+    <script type="module" src="../base.js"></script>
+</body>

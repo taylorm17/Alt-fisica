@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google tag (gtag.js) --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWQPQXCW78"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DWQPQXCW78');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubra a Masterclass Internacional de Física do CERN no IFSC São Lourenço do Oeste. o projeto conta com experiências práticas em física de partículas para estudantes e professores.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/icone.ico">
+    <link rel="stylesheet" href="Global.css">
+    <title>Projeto Masterclass SLO</title>
+    <style>
+        /* carrossel do inicio */ 
+        .post { 
+            position: relative;
+            width: 80%;
+            max-width: 550px;
+            margin: auto;
+            overflow: hidden;
+            background: white;
+            border-radius: 10px;
+        }
+        .post-count {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .post-count img {
+            flex: 0 0 100%;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .post button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white; 
+            border: none;
+            font-size: 30px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 5;
+        }
+        .post .prev { left: 10px; }
+        .post .next { right: 10px; }
+        .post button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body data-page="home">
+
+    <canvas id="canvas-bg"></canvas>
+    <header id="header" class="transparent">
+        <div class="menu-btn" id="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav id="menu">
+            <a href="index.html">Início</a>
+            <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">Instagram</a>
+            <a href="páginas/time.html">Time</a> 
+            <a href="páginas/materiais.html">Materiais</a>
+            <a href="https://home.cern/" target="_blank">CERN & Técnica</a>
+            <a href="páginas/resultados.html">Resultados</a> 
+            <a href="páginas/inscrições.html">Inscrição</a>
+        </nav>
+    </header>
+
+    <div id="overlay" class="overlay"></div>
+    <section id="banner" class="banner"></section> 
+
+    <main>
+        
+        <div class="post">
+            <button id="prev" class="prev">&#10094;</button>
+
+            <div class="post-count">
+                <img src="imagens/post1.png" alt="post1">
+                <img src="imagens/post2.png" alt="post2">
+                <img src="imagens/post3.png" alt="post3">
+                <img src="imagens/post4.png" alt="post4">
+                <img src="imagens/post5.png" alt="post5">   
+                <img src="imagens/post6.png" alt="post6">
+            </div>
+
+            <button id="next" class="next">&#10095;</button>
+        </div>
+
+        <!--caixa 1 -->
+        <section class="faixa-branca">
+            <div class="titulo-nucleo">
+                <h1 class="titulos">O que é a MasterClass?</h1>
+            </div>
+            <p>A <strong><i>International Physics Masterclasses</i></strong> é um projeto educacional global ligado ao <strong>CERN</strong> e coordenado pelo <b>IPPOG. </b> Em outubro de 2025, o IFSC - Câmpus São Lourenço do Oeste foi uma das instituições brasileiras a sediar esse evento. Sendo essa sua primeira edição no campos. </p>
+            <p>Voltado principalmente para estudantes do ensino médio e professores, a masterclass tem como objetivo aproximar o publico do ambiente de pesquisa em física de partículas, promovendo palestras introdutórias sobre o Modelo Padrão, aceleradores e detectores, além de mostrar como a ciência é feita em grandes colaborações internacionais, como as do LHC.</p>
+        </section>
+        <!--caixa 2 -->
+        <section class="faixa-branca">
+            <div class="titulo-nucleo">
+                <h1 class="titulos">Sobre o Projeto</h1>
+            </div>
+            <p>O projeto busca proporcionar a experiência prática de pesquisadores em <b>física de partículas</b>. Durante o evento, os estudantes assumem o papel de jovens pesquisadores, analisando dados reais produzidos por detectores do CERN, interpretando resultados e discutindo suas conclusões com colegas e cientistas, simulando assim o ambiente colaborativo de grandes experimentos.</p>
+            <p>Essas atividades práticas ajudam a transformar o conhecimento teórico em experiência concreta, estimulando habilidades de raciocínio crítico, comunicação e colaboração para todos os envolvidos. Mais do que aprender física, os participantes mergulham em um processo científico real, desenvolvendo competências valiosas para sua formação.</p>
+        </section>
+        <!--caixa 3 -->
+        <div class="faixa-branca">
+            <div class="conteudo-colunas">
+                <div class="texto">
+                    <div class="titulo-nucleo">
+    
+                        <h1 class="titulos">Inscrições</h1>
+    
+                    </div>
+                        <p> 📌 Atualmente, as <strong>inscrições</strong> para a Masterclass Internacional de Física do CERN no IFSC – Campus São Lourenço do Oeste <strong> não estão abertas.</strong> Em breve, o formulário será disponibilizado neste site com todas as orientações.<br>
+                        ✨ Enquanto isso,<strong> confira nossos materiais</strong> ou <strong>resultados</strong> e acompanhe os canais oficiais para <strong>garantir sua participação</strong> assim que as inscrições forem abertas! 🚀</p>
+                </div>
+                <div class="botoes"> 
+                    <a href="páginas/inscrições.html" class="botao">Inscrições</a>
+                    <a href="páginas/resultados.html" class="botao">Resultados</a>
+                </div>
+            </div>
+        </div>
+        <!--caixa 4 -->
+        <div class="faixa-branca">
+            <div class="conteudo-colunas">
+                <div class="texto">
+                    <div class="titulo-nucleo">
+    
+                        <h2 class="titulos">Ficou curioso sobre algo ou empolgado com o projeto?</h2>
+    
+                    </div>
+                    <p>Acesse mais informações logo a seguir</p>
+                </div>
+                <div class="botoes">
+                    <a href="páginas/extras.html" class="botao">Saiba mais sobre o projeto</a> 
+                    <a href="páginas/materiais.html" class="botao">Saiba mais sobre os materiais usados</a>
+                    <a href="https://www.instagram.com/masterclassdocern.ifscslo/" class="botao">Confira nosso Instagram</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <div class="coluna-esquerda-footer">
+                <a href="https://www.ifsc.edu.br/en/web/campus-sao-lourenco-do-oeste" target="_blank">
+                    <img src="imagens/logo_ifsc.png" alt="logo ifsc">
+                </a>
+                <p>Acesse o site do ifsc</p>
+            </div>
+            <div class="coluna-direita-footer">
+                <p>
+                    <a href="https://home.cern/" target="_blank">Sobre o CERN</a>
+                    <span>|</span> 
+                    <a href="https://sprace.org.br/" target="_blank">Sprace</a>
+                    <span>|</span>
+                    <a href="https://renafae.cbpf.br/" target="_blank">Renafae</a>
+                    <span>|</span>
+                    <a href="https://www.lip.pt/" target="_blank">Lip.pt</a>
+                </p>
+                <div class="texto-footer">
+                    <p>Contatos:
+                         <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">
+                            <img src="imagens/logo_insta.png" alt="instagram" style="vertical-align: middle; width: 50px;">
+                        </a> 
+                        <a href="mailto:projetomasterclass.slo@gmail.com" target="_blank">
+                            <img src="imagens/icone_email.png" alt="e-mail" style="vertical-align: middle; width: 50px;">
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="base.js"></script>
+
+</body>
+
+</html>
