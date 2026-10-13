@@ -26,24 +26,40 @@
     <title>Informações adicionais</title>
 
     <style>
+        .accordion, .accordion-content {
+            margin-left: 0;
+        }
         .texto {
             color: #3082a1;
             font-family: "Lora", serif;
             -webkit-text-stroke-color: black;
             -webkit-text-stroke-width: 100%; 
         }
-        body[data-page="extras"] .accordion {
-            max-width: none;
-            margin-left: 0;
+        #faq .faq-extra {
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition: grid-template-rows 0.4s ease, opacity 0.25s ease;
         }
 
-        body[data-page="extras"] .accordion-btn {
-            max-width: none;
+        #faq.faq-expanded .faq-extra {
+            grid-template-rows: 1fr;
+            opacity: 1;
         }
 
-        body[data-page="extras"] .accordion-content {
-            margin-left: 0;
-            margin-bottom: 12px;
+        #faq .faq-extra-inner {
+            min-height: 0;
+            overflow: hidden;
+        }
+        #faq .faq-toggle {
+            display: block;
+            margin: 14px 0 0 auto;
+            border: 0;
+            background: transparent; 
+            color: #561F4F;
+            cursor: pointer;
+            font: inherit;
+            text-align: right;
         }
     </style>
 </head>
@@ -62,6 +78,7 @@
             <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">Instagram</a>
             <a href="../páginas/time.html">Time</a>
             <a href="../páginas/materiais.html">Materiais</a>
+            <a href="../páginas/extras.html#faq">FAQ</a>
             <a href="https://home.cern/" target="_blank">CERN & Técnica</a>
             <a href="../páginas/resultados.html">Resultados</a>
             <a href="../páginas/inscrições.html">Inscrição</a>
@@ -98,7 +115,7 @@
             </div>
         </section>
 
-        <section class="faixa-branca">
+        <section id="faq" class="faixa-branca">
             <div class="titulo-nucleo">
                 <img src="../imagens/inscrições2.svg" alt="ícone de um papel com escrita">
                 <h1 class="titulos">FAQ</h1>
@@ -111,8 +128,7 @@
                 </button>
                 <div class="accordion-content">
                     <p>
-                        É um programa de divulgação científica em que estudantes têm contato
-                        com a física de partículas e analisam dados reais de colisões.
+                        É um projeto educacional internacional que aproxima estudantes do ensino médio e professores da física de partículas. Por meio de palestras e atividades práticas, os participantes conhecem conceitos fundamentais da área e têm contato com dados produzidos em experimentos reais de física de altas energias.
                     </p>
                 </div>
 
@@ -132,7 +148,56 @@
                         ele acontece durante dois dias, com atividades distribuidas ao longo desse periodo. Elas podem ser conferidas de maneira especifica na programação do evento.
                     </p>
                 </div>
+                <div class="faq-extra">
+                    <div class="faq-extra-inner">
+                        <button class="accordion-btn" type="button">
+                            Como o Cern se vincula ao evento?
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                O CERN é um dos principais centros mundiais de pesquisa em física de partículas e abriga o Grande Colisor de Hádrons (LHC). O projeto permite que os participantes explorem dados relacionados a experimentos desse campo de pesquisa e conheçam um pouco da ciência desenvolvida nesses ambientes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-extra">
+                    <div class="faq-extra-inner">
+                        <button class="accordion-btn faq-extra" type="button">
+                            O que os participantes fazem durante a Masterclass?
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                Os participantes acompanham apresentações introdutórias, aprendem sobre aceleradores e detectores de partículas e realizam atividades de análise de dados. Ao final, podem interpretar resultados e discutir suas conclusões, vivenciando etapas semelhantes às de uma investigação científica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-extra">
+                    <div class="faq-extra-inner">
+                        <button class="accordion-btn faq-extra" type="button">
+                            Quem pode participar do evento?
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                O projeto é voltado principalmente para estudantes do ensino médio e professores, mas também é aberto para qualquer interessados, basta se inscrever.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-extra">
+                    <div class="faq-extra-inner">
+                        <button class="accordion-btn faq-extra" type="button">
+                            Como faço minha inscrição?
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                            As informações e orientações de inscrição são divulgadas neste site quando um novo período de inscrições é aberto. Também é possível acompanhar os canais oficiais do projeto para receber atualizações sobre as próximas edições.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <button class="faq-toggle" type="button" aria-expanded="false">mais</button>
     </section>
 
         <section class="faixa-branca">

@@ -25,12 +25,16 @@
     <link rel="stylesheet" href="Global.css">
     <title>Projeto Masterclass SLO</title>
     <style>
+
         /* carrossel do inicio */ 
         .post { 
             position: relative;
-            width: 80%;
+            width: 100%;
             max-width: 550px;
             margin: auto;
+            overflow: visible;
+        }
+        .post-viewport {
             overflow: hidden;
             background: white;
             border-radius: 10px;
@@ -41,28 +45,115 @@
         }
         .post-count img {
             flex: 0 0 100%;
-            width: 100%;
+            max-width: 100%;
             height: auto;
             object-fit: contain;
         }
-        .post button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white; 
-            border: none;
-            font-size: 30px;
-            padding: 10px;
-            cursor: pointer;
+        .post-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 9px;
+            margin-top: 12px;
+        }
+        .post-indicator {
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            border: 0;
             border-radius: 50%;
-            z-index: 5;
+            background: #b8b8b8;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
-        .post .prev { left: 10px; }
-        .post .next { right: 10px; }
-        .post button:hover {
-            background: rgba(0, 0, 0, 0.8);
+        .post-indicator.is-active {
+            background: #CD74C1;
+            transform: scale(1.45);
         }
+        .post-indicator:focus-visible {
+            outline: 2px solid #A13A93;
+            outline-offset: 3px;
+        }
+        .seta.esquerda {
+            left: -45px;
+        }
+        .seta.direita {
+            right: -45px;
+        }
+        
+.cookie-banner {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 9999;
+  padding: 20px;
+  background: #fff;
+  color: #202124;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -4px 18px rgb(0 0 0 / 10%);
+  font-family: inherit;
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cookie-content p {
+  line-height: 1.6;
+  margin: 10px 0 16px;
+}
+
+.cookie-content a {
+  text-decoration: underline;
+}
+
+.cookie-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cookie-actions button,
+#cookie-settings {
+  padding: 10px 16px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #fff;
+  color: #202124;
+  cursor: pointer;
+  font: inherit;
+}
+
+.cookie-actions button:first-child {
+  background: #202124;
+  color: #fff;
+}
+
+.cookie-actions button:hover,
+#cookie-settings:hover {
+  opacity: 0.85;
+}
+
+.cookie-actions button:focus-visible,
+#cookie-settings:focus-visible,
+.cookie-content a:focus-visible {
+  outline: 3px solid #3979d6;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .cookie-actions {
+    flex-direction: column;
+  }
+
+  .cookie-actions button {
+    width: 100%;
+  }
+}
+
     </style>
 </head>
 <body data-page="home">
@@ -80,6 +171,7 @@
             <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank">Instagram</a>
             <a href="páginas/time.html">Time</a> 
             <a href="páginas/materiais.html">Materiais</a>
+            <a href="páginas/extras.html#faq">FAQ</a>
             <a href="https://home.cern/" target="_blank">CERN & Técnica</a>
             <a href="páginas/resultados.html">Resultados</a> 
             <a href="páginas/inscrições.html">Inscrição</a>
@@ -92,18 +184,21 @@
     <main>
         
         <div class="post">
-            <button id="prev" class="prev">&#10094;</button>
+            <button id="prev" class="seta esquerda">&#10094;</button>
 
-            <div class="post-count">
-                <img src="imagens/post1.png" alt="post1">
-                <img src="imagens/post2.png" alt="post2">
-                <img src="imagens/post3.png" alt="post3">
-                <img src="imagens/post4.png" alt="post4">
-                <img src="imagens/post5.png" alt="post5">   
-                <img src="imagens/post6.png" alt="post6">
+            <div class="post-viewport">
+                <div class="post-count">
+                    <img src="imagens/post1.png" alt="post1">
+                    <img src="imagens/post2.png" alt="post2">
+                    <img src="imagens/post3.png" alt="post3">
+                    <img src="imagens/post4.png" alt="post4">
+                    <img src="imagens/post5.png" alt="post5">   
+                    <img src="imagens/post6.png" alt="post6">
+                </div>
             </div>
 
-            <button id="next" class="next">&#10095;</button>
+            <button id="next" class="seta direita">&#10095;</button>
+            <div class="post-indicators" role="group" aria-label="Navegação dos posts"></div>
         </div>
 
         <!--caixa 1 -->
@@ -159,8 +254,32 @@
             </div>
         </div>
     </main>
+    <div id="cookie-banner" class="cookie-banner" role="dialog"
+        aria-label="Preferências de privacidade" hidden>
+    <div class="cookie-content">
+        <strong>Privacidade e cookies</strong>
+        <p>
+            Utilizamos o Google Analytics para entender como o site é acessado
+            e melhorar nossos conteúdos. O Analytics só será ativado se você
+            aceitar. Consulte nossa
+        <a href="/privacidade/">Política de Privacidade</a>.
+        </p>
+        <div class="cookie-actions">
+            <button id="accept-cookies" type="button">
+                Aceitar
+            </button>
+            <button id="reject-cookies" type="button">
+                Rejeitar
+            </button>
+        </div>
+    </div>
+    </div>
 
     <footer>
+        <a href="/privacidade/">Política de Privacidade</a>
+        <button id="cookie-settings" type="button">
+            Preferências de cookies
+        </button>
         <div class="container-footer">
             <div class="coluna-esquerda-footer">
                 <a href="https://www.ifsc.edu.br/en/web/campus-sao-lourenco-do-oeste" target="_blank">

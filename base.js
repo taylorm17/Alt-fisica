@@ -100,7 +100,18 @@ function initHome(){
   if(!container) return;
 
   const slides = container.querySelectorAll("img");
+  const indicators = document.querySelector(".post-indicators");
   let index = 0;
+  const dots = Array.from(slides, (_, slideIndex) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "post-indicator";
+    dot.setAttribute("aria-label", `Ir para o post ${slideIndex + 1}`);
+    dot.setAttribute("aria-pressed", "false");
+    dot.addEventListener("click", () => showSlide(slideIndex));
+    indicators?.appendChild(dot);
+    return dot;
+  });
 
   function showSlide(i){
 
@@ -109,6 +120,11 @@ function initHome(){
     else index = i;
 
     container.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-pressed", String(isActive));
+    });
 
   }
 
@@ -202,7 +218,25 @@ function initResultados(){
    extras
 ========================= */
   function initExtras(){
-    initAccordion();
+  initAccordion();
+
+  const faq = document.querySelector("#faq");
+  const toggle = faq?.querySelector(".faq-toggle");
+
+  if (!faq || !toggle) return;
+
+  toggle.addEventListener("click", () => {
+    const expanded = faq.classList.toggle("faq-expanded");
+
+    toggle.textContent = expanded ? "menos" : "mais";
+    toggle.setAttribute("aria-expanded", String(expanded));
+
+    if (!expanded) {
+      faq.querySelectorAll(".faq-extra.accordion-content").forEach(content => {
+        content.style.maxHeight = null;
+      });
+    }
+  });
 }
 /* =========================
    inscrições
