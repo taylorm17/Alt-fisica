@@ -1,9 +1,9 @@
 
 (() => {
-  const GA_ID = "G-XXXXXXXXXX";
+  const GA_ID = "G-DWQPQXCW78";
   const CONSENT_KEY = "masterclass_cookie_consent";
   const CONSENT_VERSION = 1;
-  const CONSENT_DAYS = 180;
+  const CONSENT_DAYS = 365;
 
   const banner = document.getElementById("cookie-banner");
   const acceptButton = document.getElementById("accept-cookies");

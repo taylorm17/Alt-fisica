@@ -387,6 +387,76 @@
     }
 
 /* ===============================
+     cookies e politica de privacidade
+=================================*/
+    .cookie-banner {
+        position: fixed;
+        inset: auto 0 0;
+        z-index: 9999;
+        padding: 20px;
+        background: #fff;
+        color: #202124;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 -4px 18px rgb(0 0 0 / 10%);
+        font-family: inherit;
+    }
+    .cookie-banner[hidden] {
+        display: none;
+    }
+    .cookie-content {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .cookie-content p {
+        line-height: 1.6;
+        margin: 10px 0 16px;
+    }
+    .cookie-content a {
+        text-decoration: underline;
+    }
+    .cookie-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .cookie-actions button,
+    #cookie-settings {
+        padding: 10px 16px;
+        border: 1px solid #333;
+        border-radius: 6px;
+        background: #fff;
+        color: #202124;
+        cursor: pointer;
+        font: inherit;
+    }
+    .cookie-actions button:first-child {
+        background: #202124;
+        color: #fff;
+    }
+
+    .cookie-actions button:hover,
+    #cookie-settings:hover {
+        opacity: 0.85;
+    }
+
+    .cookie-actions button:focus-visible,
+    #cookie-settings:focus-visible,
+    .cookie-content a:focus-visible {
+        outline: 3px solid #3979d6;
+        outline-offset: 3px;
+    }
+
+    @media (max-width: 480px) {
+    .cookie-actions {
+        flex-direction: column;
+    }
+
+    .cookie-actions button {
+        width: 100%;
+    }
+    }
+
+/* ===============================
      rodapé 
 =================================*/
     footer {
