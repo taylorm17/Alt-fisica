@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teste seus conhecimentos sobre física de partículas no quiz da Masterclass do CERN.">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="../imagens/icone.ico">
+    <link rel="stylesheet" href="/Global.css">
+    <title>Quiz de Física de Partículas | Masterclass</title>
+    <style>
+        .quiz-shell {
+            width: min(900px, 90%);
+            padding: clamp(28px, 6vw, 64px);
+            margin: 0 auto 70px;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.88);
+        }
+        .quiz-heading {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .quiz-eyebrow {
+            color: #7b3473;
+            font: 700 0.8rem "Orbitron", sans-serif;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .quiz-heading h1 {
+            margin: 12px 0;
+            color: #35102f;
+            font: 700 clamp(1.7rem, 5vw, 2.6rem) "Orbitron", sans-serif;
+        }
+        .quiz-heading p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #4b3b49;
+            line-height: 1.6;
+        }
+        .quiz-panel {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: clamp(22px, 5vw, 38px);
+            border: 1px solid rgba(86, 31, 79, 0.14);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 16px 40px rgba(59, 19, 54, 0.1);
+        }
+        .quiz-panel h2 {
+            margin: 0 0 12px;
+            color: #35102f;
+            font: 700 1.25rem "Orbitron", sans-serif;
+        }
+        .quiz-copy {
+            color: #5e5260;
+            line-height: 1.6;
+        }
+        .quiz-field-label {
+            display: block;
+            margin: 24px 0 8px;
+            color: #35102f;
+            font-weight: 700;
+        }
+        .quiz-name-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #c9b6c7;
+            border-radius: 10px;
+            color: #35102f;
+            font: inherit;
+        }
+        .quiz-name-input:focus-visible,
+        .quiz-button:focus-visible,
+        .quiz-option:focus-visible {
+            outline: 3px solid #a13a93;
+            outline-offset: 3px;
+        }
+        .quiz-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 48px;
+            padding: 12px 22px;
+            border: 0;
+            border-radius: 10px;
+            background: #561f4f;
+            color: white;
+            cursor: pointer;
+            font: 700 0.95rem "Lora", serif;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .quiz-button:hover {
+            transform: translateY(-2px);
+            background: #7b3473;
+        }
+        .quiz-start-button {
+            width: 100%;
+            margin-top: 16px;
+        }
+        .quiz-status {
+            min-height: 24px;
+            margin-top: 12px;
+            color: #8b2450;
+        }
+        .quiz-game[hidden],
+        .quiz-start[hidden],
+        .quiz-result[hidden] {
+            display: none;
+        }
+        .quiz-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 14px;
+            color: #5e4260;
+            font: 700 0.85rem "Orbitron", sans-serif;
+        }
+        .quiz-progress-track {
+            height: 8px;
+            overflow: hidden;
+            border-radius: 99px;
+            background: #eadde8;
+        }
+        .quiz-progress-fill {
+            width: 0;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #a13a93, #561f4f);
+            transition: width 0.3s ease;
+        }
+        .quiz-timer-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .quiz-timer {
+            flex: 0 0 auto;
+            color: #561f4f;
+            font: 700 1.1rem "Orbitron", sans-serif;
+            font-variant-numeric: tabular-nums;
+        }
+        .quiz-timer-track {
+            flex: 1;
+            height: 7px;
+            overflow: hidden;
+            border-radius: 99px;
+            background: #eadde8;
+        }
+        .quiz-timer-fill {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            background: #a13a93;
+            transition: width 1s linear, background-color 0.3s ease;
+        }
+        .quiz-timer-fill.is-low {
+            background: #bd3f5b;
+        }
+        .quiz-question {
+            margin: 0 0 20px;
+            color: #35102f;
+            font: 700 clamp(1.1rem, 3vw, 1.4rem) "Lora", serif;
+            line-height: 1.5;
+        }
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+        }
+        .quiz-option {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ded0dc;
+            border-radius: 10px;
+            background: #fff;
+            color: #3b2d3a;
+            cursor: pointer;
+            font: inherit;
+            line-height: 1.4;
+            text-align: left;
+            transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+        }
+        .quiz-option:hover:not(:disabled) {
+            transform: translateX(3px);
+            border-color: #a13a93;
+            background: #fbf5fa;
+        }
+        .quiz-option:disabled {
+            cursor: default;
+        }
+        .quiz-option.is-correct {
+            border-color: #37845d;
+            background: #edf8f1;
+        }
+        .quiz-option.is-incorrect {
+            border-color: #bd3f5b;
+            background: #fff1f3;
+        }
+        .quiz-feedback {
+            min-height: 26px;
+            margin: 14px 0 6px;
+            color: #5e4260;
+            font-weight: 700;
+        }
+        .quiz-next-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 8px;
+        }
+        .quiz-result {
+            text-align: center;
+        }
+        .quiz-result-score {
+            margin: 22px 0;
+            color: #7b3473;
+            font: 700 clamp(2.3rem, 8vw, 4rem) "Orbitron", sans-serif;
+        }
+        .quiz-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .quiz-stat {
+            padding: 16px 10px;
+            border-radius: 12px;
+            background: #f6eef5;
+        }
+        .quiz-stat strong {
+            display: block;
+            color: #561f4f;
+            font: 700 1.2rem "Orbitron", sans-serif;
+        }
+        .quiz-stat span {
+            display: block;
+            margin-top: 7px;
+            color: #675868;
+            font-size: 0.8rem;
+        }
+        .quiz-again {
+            margin-top: 8px;
+        }
+        @media (max-width: 540px) {
+            .quiz-shell {
+                width: 94%;
+                padding: 24px 16px;
+            }
+            .quiz-panel {
+                padding: 22px 16px;
+            }
+            .quiz-meta {
+                font-size: 0.7rem;
+            }
+            .quiz-stats {
+                grid-template-columns: 1fr;
+            }
+            .quiz-stat {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+            .quiz-stat span {
+                margin: 0;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .quiz-shell *,
+            .quiz-shell *::before,
+            .quiz-shell *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body data-page="quiz">
+    <canvas id="canvas-bg"></canvas>
+    <header id="header" class="transparent">
+        <div class="menu-btn" id="menu-btn" aria-label="Abrir menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="menu">
+            <a href="../index.html">Início</a>
+            <a href="https://www.instagram.com/masterclassdocern.ifscslo/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="time.html">Time</a>
+            <a href="materiais.html">Materiais</a>
+            <a href="extras.html#faq">FAQ</a>
+            <a href="https://home.cern/" target="_blank" rel="noopener noreferrer">CERN &amp; Técnica</a>
+            <a href="resultados.html">Resultados</a>
+            <a href="inscrições.html">Inscrição</a>
+            <a href="quiz.html" aria-current="page">Quiz</a>
+        </nav>
+    </header>
+    <div id="overlay" class="overlay"></div>
+    <section id="banner" aria-hidden="true"></section>
+
+    <main>
+        <section class="faixa-branca quiz-shell" aria-labelledby="quiz-title">
+            <div class="quiz-heading">
+                <span class="quiz-eyebrow">Desafio Masterclass</span>
+                <h1 id="quiz-title">Quiz de Física de Partículas</h1>
+                <p>O que você sabe sobre o universo subatômico? Responda 13 perguntas e teste seus conhecimentos.</p>
+            </div>
+
+            <form class="quiz-panel quiz-start" id="quiz-start-form">
+                <h2>Antes de começar</h2>
+                <p class="quiz-copy">Escolha um nome para aparecer no resultado. Você terá até 1 minuto para responder cada pergunta.</p>
+                <label class="quiz-field-label" for="quiz-username">Seu nome de usuário</label>
+                <input class="quiz-name-input" id="quiz-username" name="username" type="text" maxlength="30" autocomplete="nickname" placeholder="Ex.: explorador do CERN" required>
+                <button class="quiz-button quiz-start-button" type="submit">Começar o desafio <span aria-hidden="true">&nbsp;→</span></button>
+                <p class="quiz-status" id="quiz-start-status" role="alert" aria-live="polite"></p>
+            </form>
+
+            <section class="quiz-panel quiz-game" id="quiz-game" aria-labelledby="quiz-question" hidden>
+                <div class="quiz-meta">
+                    <span id="quiz-player"></span>
+                    <span id="quiz-count"></span>
+                </div>
+                <div class="quiz-progress-track" role="progressbar" id="quiz-progress" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="13" aria-valuenow="0">
+                    <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                </div>
+                <div class="quiz-timer-row">
+                    <span class="quiz-timer" id="quiz-timer" aria-live="off">01:00</span>
+                    <div class="quiz-timer-track" role="progressbar" id="quiz-timer-progress" aria-label="Tempo restante" aria-valuemin="0" aria-valuemax="60" aria-valuenow="60">
+                        <div class="quiz-timer-fill" id="quiz-timer-fill"></div>
+                    </div>
+                </div>
+                <h2 class="quiz-question" id="quiz-question" tabindex="-1"></h2>
+                <div class="quiz-options" id="quiz-options"></div>
+                <p class="quiz-feedback" id="quiz-feedback" role="status" aria-live="polite"></p>
+                <div class="quiz-next-row">
+                    <button class="quiz-button" id="quiz-next" type="button" hidden>Próxima pergunta&nbsp; →</button>
+                </div>
+            </section>
+
+            <section class="quiz-panel quiz-result" id="quiz-result" aria-labelledby="quiz-result-title" aria-live="polite" hidden>
+                <span class="quiz-eyebrow">Desafio concluído</span>
+                <h2 id="quiz-result-title"></h2>
+                <p class="quiz-copy">Veja como foi seu desempenho nesta rodada.</p>
+                <p class="quiz-result-score"><span id="quiz-score">0</span><small> pts</small></p>
+                <div class="quiz-stats">
+                    <div class="quiz-stat"><strong id="quiz-correct">0/13</strong><span>Respostas certas</span></div>
+                    <div class="quiz-stat"><strong id="quiz-total-time">00:00</strong><span>Tempo total</span></div>
+                    <div class="quiz-stat"><strong id="quiz-username-result"></strong><span>Jogador(a)</span></div>
+                </div>
+                <button class="quiz-button quiz-again" id="quiz-again" type="button">Jogar novamente</button>
+            </section>
+        </section>
+    </main>
+
+    <script type="module" src="../base.js"></script>
+</body>
+</html>

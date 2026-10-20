@@ -205,12 +205,12 @@
         align-items: center;
         color: white;
         text-align: center;
-        background-color: #561F4F;
+        background-color: #3c0c37;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 1400px auto;
         position: relative;
-        background-image: url('/imagens/banner2.png');
+        background-image: url('/imagens/banner3.png');
         margin-bottom: 60px;
     }
 
